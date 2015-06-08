@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>modal demo</title>
+		<link rel="stylesheet" href="modal.css">
+	</head>
+	<body>
+		<div class="main" style="color: #EEE;">
+			<a href="javascript:void(0);" onclick="modal.showDialog({cancelCb: function(){alert('cancel')}, okCb: function(){alert('ok')}})">Show dialog</a>
+			<a href="javascript:void(0);" onclick="modal.showLoading()">show loading</a>
+		</div>
+
+		<!-- dialog -->
+		<div class="modal-dialog">
+			<div class="modal-header">
+				<h4>Modal title</h4>
+			</div>
+			<div class="modal-body">one fine body...</div>
+			<div class="modal-footer">
+				<a>取消</a>
+				<a data-btn="ok">确定</a>
+				<i></i>
+			</div>
+		</div>
+		
+		<!-- loading tip -->
+		<div class="modal-loading">loading...</div>
+
+		<script src="modal.js"></script>
+	</body>
+</html>
