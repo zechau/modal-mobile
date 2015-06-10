@@ -12,6 +12,7 @@ The modal-mobile doesn't relies on any javascirt library and takes advantages of
 ## Usage
 add html with styles
 ```html
+<!--dialog html-->
 <div class="modal-dialog">
 			<div class="modal-header">
 				<h4>Modal title</h4>
@@ -23,9 +24,16 @@ add html with styles
 				<i></i>
 			</div>
  </div>
+ 
+ <!--loding tip html-->
+<div class="modal-loading">loading...</div>
 ```
-call
+call functions
 ```javascript
+//show dialog
+modal.showDialog();
+
+//show loading
 modal.showDialog();
 ```
 
