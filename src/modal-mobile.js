@@ -10,7 +10,7 @@
 			type = options.type = t;
 
 
-			//默认显示背景
+			//show backdrop by default
 			if(options.backdrop !== false){
 				$backdrop = document.createElement('div');
 				$backdrop.className = "modal-backdrop";
@@ -21,10 +21,9 @@
 				var $modal = document.querySelector(".modal-" + type);
 
 				if($modal){
-					$modal.style.display = "block";//要先显示，否则offsetWidth 为0
+					$modal.style.display = "block";//must be seted to show，or the offsetWidth will be 0
 
 					if(type === "dialog"){
-						//垂直居中
 						document.querySelector('.modal-footer').addEventListener('click', btnListener = function(e){
 
 							if(e.target.getAttribute("data-btn") === "ok" ){
@@ -38,7 +37,6 @@
 						}, false);
 					}
 
-					//窗口改变时重新定位窗口
 					window.onresize = function() {
 						$modal.style.left = (window.innerWidth - $modal.offsetWidth) / 2 + "px";
 						if(type === "dialog"){
@@ -46,7 +44,7 @@
 						}
 					};
 
-					//立即触发以定位窗口位置
+					//trigger to locate the stuff to center 
 					window.onresize();
 				}
 			}
@@ -75,19 +73,20 @@
 	window.modal =  {
 		/**
 		* options = {
-		*backdrop: true|false 是否显示蒙层
-		*okCb: function 确认按钮回调
-		*cancelCb: function 取消按钮回调
+		*backdrop: true|false (show backdrop or not)
+		*okCb: function (ok callback)
+		*cancelCb: function (cancel callback)
 		*
 		*}
 		**/
+
 		"showDialog": function(options){
 			show(options, 'dialog');
 		},
 
 		/**
 		* options = {
-		*backdrop: true|false 是否显示蒙层
+		*backdrop: true|false  (show backdrop or not)
 		*}
 		**/
 		"showLoading": function(options){
