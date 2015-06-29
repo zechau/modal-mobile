@@ -34,7 +34,7 @@ call functions
 modal.showDialog();
 
 //show loading
-modal.showDialog();
+modal.showLoading();
 ```
 
 ## License
