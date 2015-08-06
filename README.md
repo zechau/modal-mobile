@@ -2,7 +2,7 @@
 A simple &amp; lightweight &amp; high performance method of displaying modal window for mobile only
 
 # why modal-mobile
-The modal-mobile doesn't relies on any javascirt library and takes advantages of the new featues of browser like 'queryseletor' and so on. So it's really light-weight with high performance. that's amazing! Because of its light it's also easy to be customized!
+The modal-mobile doesn't rely on any javascirt library and takes advantages of the new featues of browser like 'queryseletor' and so on. So it's really light-weight with high performance. that's amazing! Because of its light it's also easy to be customized!
 
 ## Installation
 ```html
