@@ -31,7 +31,14 @@ add html with styles
 call functions
 ```javascript
 //show dialog
-modal.showDialog();
+modal.showDialog({
+	cancelCb: function(){
+	//do something after cancel clicked
+	},
+	okCb: function(){
+	//do something after ok clicked
+	}
+});
 
 //show loading
 modal.showLoading();
