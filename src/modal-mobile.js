@@ -24,7 +24,9 @@
 					$modal.style.display = "block";//must be seted to show，or the offsetWidth will be 0
 
 					if(type === "dialog"){
-						document.querySelector('.modal-footer').addEventListener('click', btnListener = function(e){
+						var $footer = document.querySelector('.modal-footer');
+						$footer.addEventListener('click', btnListener = function(e){
+							e.preventDefault();
 
 							if(e.target.getAttribute("data-btn") === "ok" ){
 								options.okCb && options.okCb();
@@ -35,6 +37,8 @@
 							hide();
 							
 						}, false);
+
+						$footer.addEventListener('touchstart', btnListener);
 					}
 
 					window.onresize = function() {
@@ -64,7 +68,9 @@
 			$modal && ($modal.style.display = "none");
 
 			if(type === "dialog"){
-				document.querySelector('.modal-footer').removeEventListener('click', btnListener, false);
+				var $footer = document.querySelector('.modal-footer');
+				$footer.removeEventListener('click', btnListener, false);
+				$footer.removeEventListener('touchstart', btnListener, false);
 			}
 
 			window.onresize = null;
